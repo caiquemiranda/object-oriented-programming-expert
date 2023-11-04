@@ -37,35 +37,44 @@ if __name__ == "__main__":
     
     modelo = input().lower()
     
-    while modelo in list_model:
-        meu_carro = Carro(modelo)
+    next = True    
+    while next:    
+        if modelo in list_model:
+            meu_carro = Carro(modelo)
+            continuar = True
+            while continuar:
+                print("Escolha uma opção:")
+                print("1 - Acelerar")
+                print("2 - Ver velocidade atual")
+                print("3 - Sair")
 
-        continuar = True
-        while continuar:
-            print("Escolha uma opção:")
-            print("1 - Acelerar")
-            print("2 - Ver velocidade atual")
-            print("3 - Sair")
+                opcao = input()
 
-            opcao = input()
-
-            if opcao == "1":
-                meu_carro.acelerar(modelo)
-            
-                if meu_carro.get_velocidade() >= 100:
-                    print("MULTADO! Você ultrapassou a velocidade permitida.")
-                    break
-                else:
-                    continue
+                if opcao == "1":
+                    meu_carro.acelerar(modelo)
                 
-            elif opcao == "2":
-                print(f"Velocidade atual: {meu_carro.get_velocidade()} km/h")
-            
-            elif opcao == "3":
-                continuar = False
-                modelo = False
-            
-            else:
-                print("Opção inválida!")
+                    if meu_carro.get_velocidade() >= 100:
+                        print("MULTADO! Você ultrapassou a velocidade permitida.")
+                        break
+                    else:
+                        continue
+                    
+                elif opcao == "2":
+                    print(f"Velocidade atual: {meu_carro.get_velocidade()} km/h")
+                
+                elif opcao == "3":
+                    continuar = False
+                    modelo = False
+                    break
+                
+                else:
+                    print("Opção inválida!")
 
-        print("Fim da aplicação. Até mais!")
+            print("Fim da aplicação. Até mais!")
+            break
+
+        else:
+                    print("Opção inválida!")
+                    print("Digite o modelo do seu Veiculo:")
+                    print("'sport', 'moto', 'truck', 'suv'")
+                    modelo = input().lower()
