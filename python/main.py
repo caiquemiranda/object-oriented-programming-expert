@@ -11,13 +11,13 @@ class Carro:
         self.modelo = modelo
         
         if self.modelo == 'sport':
-            self.velocidade += randint(10, 40)
+            self.velocidade += randint(10, 30)
 
         elif self.modelo == 'suv':
-            self.velocidade += randint(20, 60)
+            self.velocidade += randint(10, 40)
 
         elif self.modelo == 'moto':
-            self.velocidade += randint(30, 80)
+            self.velocidade += randint(10, 50)
 
         elif self.modelo == 'truck':
             self.velocidade += randint(10, 20)
